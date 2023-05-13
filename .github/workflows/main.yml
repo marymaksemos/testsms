@@ -1,0 +1,13 @@
+name: SMS Notification
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send_sms:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send SMS notification
+        run: |
+          echo "Pipeline Notification: Repository - Branch - Commit" | mail -s "SMS Notification" 0737796897@sms.comviq.se
