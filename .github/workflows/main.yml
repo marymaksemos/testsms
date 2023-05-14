@@ -11,7 +11,7 @@ jobs:
       - name: Set up ssmtp
         run: |
           sudo apt-get -y install ssmtp
-          echo "root=postmaster\nmailhub=smtp.gmail.com:587\nAuthUser=mary.s.maksemos.com\nAuthPass=<your-email-password>\nUseSTARTTLS=YES" | sudo tee /etc/ssmtp/ssmtp.conf
+          echo "root=postmaster\nmailhub=smtp.gmail.com:587\nAuthUser=mary.s.maksemos.com\nAuthPass=${{ secrets.EMAIL_PASSWORD }}\nUseSTARTTLS=YES" | sudo tee /etc/ssmtp/ssmtp.conf
           sudo chmod 640 /etc/ssmtp/ssmtp.conf
           sudo chown root:mail /etc/ssmtp/ssmtp.conf
 
